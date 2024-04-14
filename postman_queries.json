@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "e664ed07-de48-460a-83cc-c92966a569e6",
+		"name": "kredinbizde",
+		"description": "These are sample implementations of kredinbizde project.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31426991"
+	},
+	"item": [
+		{
+			"name": "akbank-service",
+			"item": [
+				{
+					"name": "loan applications",
+					"item": [
+						{
+							"name": "new loan applicaton",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\":234234,\n    \"interestRate\": 3,\n    \"loanType\":\"CONSUMER_LOAN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8084/api/akbank/loans/deneme123@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"akbank",
+										"loans",
+										"deneme123@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all loan applications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/akbank/loans/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"akbank",
+										"loans",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get loan applications of user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/akbank/loans/aliakasya@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"akbank",
+										"loans",
+										"aliakasya@gmail.com"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "credit-card applications",
+					"item": [
+						{
+							"name": "new credit card applicaton",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cardLimit\": 9999,\n    \"cardNumber\": \"4444 3333 2222 1111\",\n    \"cvv\": \"123\",\n    \"expiryDate\": \"2028-11-11\",    \n    \"cardType\": \"BUSINESS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8084/api/akbank/credit-cards/deneme123@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"akbank",
+										"credit-cards",
+										"deneme123@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all credit card applications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8084/api/akbank/credit-cards/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"akbank",
+										"credit-cards",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get credit card applications of user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/akbank/credit-cards/aliakasya@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"akbank",
+										"credit-cards",
+										"aliakasya@gmail.com"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customers",
+					"item": [
+						{
+							"name": "add new customer to bank",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8084/api/akbank/customers/add/deneme123@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"akbank",
+										"customers",
+										"add",
+										"deneme123@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove customer from banl",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8084/api/akbank/customers/delete/aliakasya@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"akbank",
+										"customers",
+										"delete",
+										"aliakasya@gmail.com"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "kredinbizde-service",
+			"item": [
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ali\",\n    \"surname\": \"Akasya\",\n    \"birthDate\": \"1995-10-10\",\n    \"email\": \"deneme123@gmail.com\",\n    \"password\": \"passsword123456\",\n    \"phoneNumber\": \"5554443322\",\n    \"isActive\": true,\n    \"address\": {\n        \"addressTitle\": \"Is\",\n        \"addressDescription\": \"Gul sokak. Yurt Mah. Ankara\",\n        \"province\": \"Ankara\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/kredinbizde/users/deneme123@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"kredinbizde",
+								"users",
+								"deneme123@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ali\",\n    \"surname\": \"Akasya\",\n    \"birthDate\": \"1995-10-10\",\n    \"email\": \"deneme123@gmail.com\",\n    \"password\": \"passsword123456\",\n    \"phoneNumber\": \"5554443322\",\n    \"isActive\": true,\n    \"address\": {\n        \"addressTitle\": \"Is\",\n        \"addressDescription\": \"Gul sokak. Yurt Mah. Ankara\",\n        \"province\": \"Ankara\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/kredinbizde/users/deneme123@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"kredinbizde",
+								"users",
+								"deneme123@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create bank ziraat (sample)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"T.C. ZIRAAT BANKASI A.S.\",\r\n    \"address\": {\r\n        \"addressTitle\": \"Genel Mudurluk\",\r\n        \"addressDescription\": \"T.C. Ziraat Bankasi Genel Mudurlugu, Finanskent Mah. Finans Cad. No:44A Umraniye / ISTANBUL\",\r\n        \"province\":\"Istanbul\"\r\n    },\r\n    \"phone\": \"0216 590 20 00\",\r\n    \"customers\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create bank akbank (sample)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"AKBANK TURKIYE A.S.\",\r\n    \"address\": {\r\n        \"addressTitle\": \"Genel Mudurluk\",\r\n        \"addressDescription\": \"Akbank Genel Mudurlugu Sabanci Center 4.Levent 34330 Istanbul\",\r\n        \"province\":\"Istanbul\"\r\n    },\r\n        \"customers\": [],\r\n    \"phone\": \"0212 385 55 55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/kredinbizde/banks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create bank garanti (sample)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TURKIYE GARANTI BANKASI A.S.\",\r\n    \"address\": {\r\n        \"addressTitle\": \"Genel Mudurluk\",\r\n        \"addressDescription\": \"Levent Nispetiye Mah. Aytar Cad. No:2 Besiktas 34340 Istanbul\",\r\n        \"province\":\"Istanbul\"\r\n    },\r\n    \"phone\": \"0212 318 18 18\",        \r\n    \"customers\": []\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create bank yapıkredi (sample)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"YAPI VE KREDI BANKASI A.S.\",\r\n    \"address\": {\r\n        \"addressTitle\": \"Genel Mudurluk\",\r\n        \"addressDescription\": \"Yapi Kredi Plaza D Blok, 34330-Levent-Istanbul\",\r\n        \"province\":\"Istanbul\"\r\n    },\r\n    \"phone\": \"0212 339 70 00\",\r\n    \"customers\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all customers of bank",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get customer of bank",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks/2/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks",
+								"2",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user as a customer to a bank",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks/2/deneme123@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks",
+								"2",
+								"deneme123@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove customer of a bank",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/banks/2/deneme123@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"banks",
+								"2",
+								"deneme123@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user -FOR TEST OBJECTS-(should be runned only when user has no relation with banks)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/api/kredinbizde/users/test@mail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"kredinbizde",
+								"users",
+								"test@mail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

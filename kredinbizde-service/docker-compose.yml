@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: kredinbizde_database_container
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'kredinbizde'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: kredinbizde_rabbitmq_container
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: 'admin'
+      RABBITMQ_DEFAULT_PASS: '123456'
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+
+volumes:
+  mysql_data:
+    driver: local

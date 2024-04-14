@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: akbank_database_container
+    environment:
+      MYSQL_DATABASE: 'akbank-database'
+      MYSQL_ROOT_PASSWORD: 'password'  # Burada güvenli bir şifre kullanmalısınız
+    ports:
+      - "3307:3306"  # 3306 yerine 3307 portunu kullanıyoruz
+    volumes:
+      - mysql_data_akbank:/var/lib/mysql
+
+volumes:
+  mysql_data_akbank:
+    driver: local

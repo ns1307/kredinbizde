@@ -1,0 +1,16 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: kredinbizde-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: kredinbizde-service
+          uri: http://localhost:8080
+          predicates:
+             - Path=/api/kredinbizde/**
+        - id: akbank-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/akbank/**
